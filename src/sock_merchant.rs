@@ -36,5 +36,5 @@ pub fn run() {
         }
     }
 
-    println!("Found {} pairs of socks", counter);
+    println!("{}", counter);
 }
