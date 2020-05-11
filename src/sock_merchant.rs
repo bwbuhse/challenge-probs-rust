@@ -1,22 +1,20 @@
 use std::collections::HashSet;
-use std::fs::File;
-use std::io::{BufRead, BufReader};
+use std::io;
+use std::io::prelude::*;
 
 /// Problem 1:
 /// https://www.hackerrank.com/challenges/sock-merchant/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=warmup
 
 pub fn run() {
-    // Set-up the file and read in its lines
-    let file =
-        File::open("/home/ben/projects/interview-probs-rust/inputs/sock_merchant.dat").unwrap();
-    let reader = BufReader::new(file);
-    let mut lines = reader.lines().map(|l| l.unwrap());
+    // Set up the i/o and read it
+    let stdin = io::stdin();
+    let mut lines = stdin.lock().lines();
 
     // Parse the lines
-    // let _n = lines.next().unwrap().parse::<usize>().unwrap();
     let _n = lines.next();
     let socks = lines
         .next()
+        .unwrap()
         .unwrap()
         .split(" ")
         .map(|x| x.parse::<u32>().unwrap())
