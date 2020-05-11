@@ -1,3 +1,5 @@
+mod sock_merchant;
+
 fn main() {
-    println!("Hello, world!");
+    sock_merchant::run();
 }
