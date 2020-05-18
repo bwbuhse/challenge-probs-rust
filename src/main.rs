@@ -1,4 +1,5 @@
 mod add_two_numbers;
+mod anagrams;
 mod sock_merchant;
 mod two_sum;
 use std::env;
@@ -32,6 +33,23 @@ fn main() {
                     "{:?}",
                     add_two_numbers::add_two_numbers(Some(l1n1), Some(l2n1))
                 )
+            }
+            "anagrams" => {
+                println!(
+                    "{:?}",
+                    anagrams::find_anagrams(String::from("abab"), String::from("ab"))
+                );
+                println!(
+                    "{:?}",
+                    anagrams::find_anagrams(String::from("cbaebabacd"), String::from("abc"))
+                );
+                println!(
+                    "{:?}",
+                    anagrams::find_anagrams(
+                        String::from("aaaaaaaaaa"),
+                        String::from("aaaaaaaaaaaaa")
+                    )
+                );
             }
             _ => println!("Invalid program name"),
         };
