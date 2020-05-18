@@ -50,6 +50,10 @@ fn main() {
                         String::from("aaaaaaaaaaaaa")
                     )
                 );
+                println!(
+                    "{:?}",
+                    anagrams::find_anagrams(String::from("aaa"), String::from("aaa"))
+                );
             }
             _ => println!("Invalid program name"),
         };
