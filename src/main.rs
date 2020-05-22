@@ -1,5 +1,6 @@
 mod add_two_numbers;
 mod anagrams;
+mod char_freq;
 mod sock_merchant;
 mod two_sum;
 use std::env;
@@ -55,6 +56,7 @@ fn main() {
                     anagrams::find_anagrams(String::from("aaa"), String::from("aaa"))
                 );
             }
+            "char_freq" => println!("{}", char_freq::frequency_sort(String::from("tree"))),
             _ => println!("Invalid program name"),
         };
     } else {
