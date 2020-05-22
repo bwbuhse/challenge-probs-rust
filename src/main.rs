@@ -1,6 +1,7 @@
 mod add_two_numbers;
 mod anagrams;
 mod char_freq;
+mod fizz_sum;
 mod sock_merchant;
 mod two_sum;
 use std::env;
@@ -57,9 +58,17 @@ fn main() {
                 );
             }
             "char_freq" => println!("{}", char_freq::frequency_sort(String::from("tree"))),
+            "fizz_sum" => println!("{}", fizz_sum::sol(10)),
             _ => println!("Invalid program name"),
         };
     } else {
         println!("You need to pass program that you want to run as an arg");
     }
+}
+
+#[test]
+fn returns_expected() {
+    assert_eq!(fizz_sum::sol(10), 23);
+    assert_eq!(fizz_sum::sol(11), 33);
+    assert_eq!(fizz_sum::sol(6), 8);
 }
