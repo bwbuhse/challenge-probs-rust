@@ -93,6 +93,7 @@ fn leet_code(challenge: &str) {
 fn code_wars(challenge: &str) {
     match challenge {
         "fizz_sum" => println!("{}", code_wars::fizz_sum::sol(10)),
+        "desc_order" => println!("{}", code_wars::desc_order::sol(145263)),
         _ => println!("Invalid challenge name"),
     }
 }
