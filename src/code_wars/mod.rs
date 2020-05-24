@@ -1,3 +1,4 @@
+pub mod bits;
 pub mod desc_order;
 pub mod fizz_sum;
 pub mod get_middle_char;

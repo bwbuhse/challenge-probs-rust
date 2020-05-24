@@ -102,6 +102,7 @@ fn code_wars(challenge: &str) {
             println!("{:?}", code_wars::tribonacci::seq(&[0., 1., 1.], 10)); //  vec![0., 1., 1., 2., 4., 7., 13., 24., 44., 81.]
         }
         "get_middle_char" => println!("{}", code_wars::get_middle_char::get_middle("test")),
+        "bit_count" => println!("{}", code_wars::bits::count_ones(1234)),
         _ => println!("Invalid challenge name"),
     }
 }
@@ -154,4 +155,13 @@ fn test_get_middle_char() {
     assert_eq!(code_wars::get_middle_char::get_middle("middle"), "dd");
     assert_eq!(code_wars::get_middle_char::get_middle("A"), "A");
     assert_eq!(code_wars::get_middle_char::get_middle("of"), "of");
+}
+
+#[test]
+fn test_bit_count() {
+    assert_eq!(code_wars::bits::count_ones(0), 0);
+    assert_eq!(code_wars::bits::count_ones(4), 1);
+    assert_eq!(code_wars::bits::count_ones(7), 3);
+    assert_eq!(code_wars::bits::count_ones(9), 2);
+    assert_eq!(code_wars::bits::count_ones(10), 2);
 }
