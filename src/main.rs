@@ -98,6 +98,10 @@ fn code_wars(challenge: &str) {
             println!("{}", code_wars::valid_braces::is_valid("[({})](]")); // False
             println!("{}", code_wars::valid_braces::is_valid("([{}])")); // True
         }
+        "tribonacci" => {
+            println!("{:?}", code_wars::tribonacci::seq(&[0., 1., 1.], 10)); //  vec![0., 1., 1., 2., 4., 7., 13., 24., 44., 81.]
+        }
+        "get_middle_char" => println!("{}", code_wars::get_middle_char::get_middle("test")),
         _ => println!("Invalid challenge name"),
     }
 }
@@ -107,4 +111,48 @@ fn test_fizz_sum() {
     assert_eq!(code_wars::fizz_sum::sol(10), 23);
     assert_eq!(code_wars::fizz_sum::sol(11), 33);
     assert_eq!(code_wars::fizz_sum::sol(6), 8);
+}
+
+// TODO: Finish tribonacci!
+// #[test]
+// fn test_tribonacci() {
+//     assert_eq!(
+//         code_wars::tribonacci::seq(&[0., 1., 1.], 10),
+//         vec![0., 1., 1., 2., 4., 7., 13., 24., 44., 81.]
+//     );
+//     assert_eq!(
+//         code_wars::tribonacci::seq(&[1., 0., 0.], 10),
+//         vec![1., 0., 0., 1., 1., 2., 4., 7., 13., 24.]
+//     );
+//     assert_eq!(
+//         code_wars::tribonacci::seq(&[0., 0., 0.], 10),
+//         vec![0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]
+//     );
+//     assert_eq!(
+//         code_wars::tribonacci::seq(&[1., 2., 3.], 10),
+//         vec![1., 2., 3., 6., 11., 20., 37., 68., 125., 230.]
+//     );
+//     assert_eq!(
+//         code_wars::tribonacci::seq(&[3., 2., 1.], 10),
+//         vec![3., 2., 1., 6., 9., 16., 31., 56., 103., 190.]
+//     );
+//     assert_eq!(code_wars::tribonacci::seq(&[1., 1., 1.], 1), vec![1.]);
+//     assert_eq!(code_wars::tribonacci::seq(&[300., 200., 100.], 0), vec![]);
+//     assert_eq!(
+//         code_wars::tribonacci::seq(&[0.5, 0.5, 0.5], 30),
+//         vec![
+//             0.5, 0.5, 0.5, 1.5, 2.5, 4.5, 8.5, 15.5, 28.5, 52.5, 96.5, 177.5, 326.5, 600.5, 1104.5,
+//             2031.5, 3736.5, 6872.5, 12640.5, 23249.5, 42762.5, 78652.5, 144664.5, 266079.5,
+//             489396.5, 900140.5, 1655616.5, 3045153.5, 5600910.5, 10301680.5
+//         ]
+//     );
+// }
+
+#[test]
+fn test_get_middle_char() {
+    assert_eq!(code_wars::get_middle_char::get_middle("test"), "es");
+    assert_eq!(code_wars::get_middle_char::get_middle("testing"), "t");
+    assert_eq!(code_wars::get_middle_char::get_middle("middle"), "dd");
+    assert_eq!(code_wars::get_middle_char::get_middle("A"), "A");
+    assert_eq!(code_wars::get_middle_char::get_middle("of"), "of");
 }
