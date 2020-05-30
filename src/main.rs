@@ -86,6 +86,16 @@ fn leet_code(challenge: &str) {
             "{}",
             leet_code::char_freq::frequency_sort(String::from("tree"))
         ),
+        "courses" => {
+            println!(
+                "Expect true: {}",
+                leet_code::courses::can_finish(2, vec![vec![1, 0]])
+            );
+            println!(
+                "Expect false: {}",
+                leet_code::courses::can_finish(2, vec![vec![1, 0], vec![1, 0], vec![0, 1]])
+            );
+        }
         _ => println!("Invalid challenge name"),
     }
 }
