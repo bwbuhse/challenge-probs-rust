@@ -96,6 +96,16 @@ fn leet_code(challenge: &str) {
                 leet_code::courses::can_finish(2, vec![vec![1, 0], vec![1, 0], vec![0, 1]])
             );
         }
+        "points" => {
+            println!(
+                "Expect [[-2, 2]]: {:?}",
+                leet_code::points::k_closest(vec![vec![1, 3], vec![-2, 2]], 1)
+            );
+            println!(
+                "Expect [[3, 3], [-2, 4]] (or reverse order): {:?}",
+                leet_code::points::k_closest(vec![vec![3, 3], vec![5, -1], vec![-2, 4]], 2)
+            );
+        }
         _ => println!("Invalid challenge name"),
     }
 }
