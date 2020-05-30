@@ -86,6 +86,14 @@ fn leet_code(challenge: &str) {
             "{}",
             leet_code::char_freq::frequency_sort(String::from("tree"))
         ),
+        "bipartition" => {
+            let mut n = 4;
+            let mut dislikes = vec![vec![1, 2], vec![1, 3], vec![2, 4]];
+            println!(
+                "Input: N = 4, dislikes = [[1,2],[1,3],[2,4]] should be true: {}",
+                leet_code::bipartition::possible_bipartition(n, dislikes),
+            );
+        }
         _ => println!("Invalid challenge name"),
     }
 }
