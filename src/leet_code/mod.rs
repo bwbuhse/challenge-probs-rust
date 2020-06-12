@@ -3,4 +3,5 @@ pub mod anagrams;
 pub mod char_freq;
 pub mod courses;
 pub mod points;
+pub mod random_pick;
 pub mod two_sum;

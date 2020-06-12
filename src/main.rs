@@ -2,6 +2,7 @@ mod code_wars;
 mod hacker_rank;
 mod leet_code;
 
+use std::collections::HashMap;
 use std::env;
 
 fn main() {
@@ -104,6 +105,21 @@ fn leet_code(challenge: &str) {
             println!(
                 "Expect [[3, 3], [-2, 4]] (or reverse order): {:?}",
                 leet_code::points::k_closest(vec![vec![3, 3], vec![5, -1], vec![-2, 4]], 2)
+            );
+        }
+        "random_pick" => {
+            let vec = vec![1, 3];
+            let picker = leet_code::random_pick::Picker::new(vec.clone());
+            let mut counts: HashMap<i32, i32> = HashMap::new();
+
+            for _ in 0..1000 {
+                let index = picker.pick_index();
+                let count = *counts.entry(index).or_insert(0);
+                counts.insert(index, count + 1);
+            }
+            println!(
+                "Results of 1000 runs of pick_index with input {:?}: {:?}",
+                vec, counts
             );
         }
         _ => println!("Invalid challenge name"),
