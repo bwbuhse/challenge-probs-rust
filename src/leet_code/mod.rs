@@ -4,4 +4,5 @@ pub mod char_freq;
 pub mod courses;
 pub mod points;
 pub mod random_pick;
+pub mod three_sum;
 pub mod two_sum;

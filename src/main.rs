@@ -39,6 +39,10 @@ fn hacker_rank(challenge: &str) {
 fn leet_code(challenge: &str) {
     match challenge {
         "two_sum" => println!("{:?}", leet_code::two_sum::two_sum(vec![2, 7, 11, 15], 9)),
+        "three_sum" => println!(
+            "{:?}",
+            leet_code::three_sum::three_sum(vec![-1, 0, 1, 2, -1, -4], 0)
+        ),
         "add_two_numbers" => {
             // Set up the first linked list
             let mut l1n1 = Box::new(leet_code::add_two_numbers::ListNode::new(2));
